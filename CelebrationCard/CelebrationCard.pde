@@ -1,6 +1,8 @@
 //Global Variables
 //
-void setup() {} //End setup
+void setup() {
+ //Print & Println
+} //End setup
 //
 void draw() {} //End draw
 //
