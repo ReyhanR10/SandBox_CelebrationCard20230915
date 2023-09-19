@@ -23,6 +23,7 @@ void setup() {
  yRect = appHeight*1/4;
  widthRect2 = appWidth*1/2;
  heightRect2 = appHeight*1/2;
+ //
 } //End setup 
 //
 void draw() {
