@@ -1,10 +1,14 @@
 //Global Variables
-int appWidth, appHeight;
+int appWidth, appHeight; 
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
+//String ; //All tect variables as name=value pairs
+//PFont ; //All font
+//color ; //colour palette & inks
+//int sizeFont, size; //Text Variables
 //
 void setup() {
- //Print & Println
+ //Print & Println 
  println("Hello World");
  println("Width:"+width, "\t", "Height:"+height);
  println("Display Width: "+displayWidth, "\tDisplay Width: "+displayHeight);
@@ -24,11 +28,29 @@ void setup() {
  widthRectQuit = appWidth*1/2;
  heightRectQuit = appHeight*1/2;
  //
+ //DIVs
+ rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+ rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+ //rect(); //Image, foreground, near the top
+ //rect(); //Copy and paste this for all rect()s
+ // 
+ // Text Setup
+  // Fonts from OS (Operating System) 
+  //String[] fontList = PFont.list(); //Lists all fonts available on OS
+  //printArray(fontList);
+   //[fontName] =  createFont("fontSpelling", [startingFont]);
+   //Verify the font exist in Processing.Java
+  //
 } //End setup 
 //
 void draw() {
- rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
- rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  //Drawing Text, copied for each line of text
+  //fill [colourName]; //ink
+  textAlign(CENTER, CENTER); //A;ign X&Y, see Processing.org / reference
+  //size = [pixelNumberFontsize]; //integer number
+  //textFont( [fontVariables] , size); // states which font to use
+  //text ( [textStringName], [four rect() variables copied from DIVs]);
+  //
 } //End draw
 //
 void keyPressed() {
