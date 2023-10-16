@@ -5,7 +5,8 @@ float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 //String ; //All tect variables as name=value pairs
 //PFont ; //All font
 //color ; //colour palette & inks
-//int sizeFont, size; //Text Variables
+int sizeFont, size; //Text Variables
+//
 //
 void setup() {
  //Print & Println 
@@ -35,12 +36,12 @@ void setup() {
  //rect(); //Copy and paste this for all rect()s
  // 
  // Text Setup
-  // Fonts from OS (Operating System) 
-  //String[] fontList = PFont.list(); //Lists all fonts available on OS
-  //printArray(fontList);
-   //[fontName] =  createFont("fontSpelling", [startingFont]);
-   //Verify the font exist in Processing.Java
-  //
+ // Fonts from OS (Operating System) 
+ //String[] fontList = PFont.list(); //Lists all fonts available on OS
+ //printArray(fontList);
+ //[fontName] =  createFont("fontSpelling", [startingFont]);
+ //Verify the font exist in Processing.Java
+ //
 } //End setup 
 //
 void draw() {
