@@ -40,7 +40,7 @@ void setup() {
  //String[] fontList = PFont.list(); //Lists all fonts available on OS
  //printArray(fontList);
  //[fontName] =  createFont("fontSpelling", [startingFont]);
- //Verify the font exist in Processing.Java
+ //Verify the font exist in Processing.Java  
  //
 } //End setup 
 //
