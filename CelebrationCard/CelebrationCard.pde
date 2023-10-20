@@ -2,11 +2,15 @@
 int appWidth, appHeight; 
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
-//String ; //All tect variables as name=value pairs
-//PFont ; //All font
-//color ; //colour palette & inks
+int appwidth, appheight;
+float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+PImage picBackground;
+String title="JAPAN!", footer="JKT48";
+PFont titleFont, footerFont;
+color pink = #ED0E60, resetDefaultInk=#FFFFFF, red = #F53E3E; //colour palette & inks
 int sizeFont, size; //Text Variables
-//
+float xTitle, yTitle, widthTitle, heightTitle;
+float xFooter, yFooter, widthFooter, heightFooter;
 //
 void setup() {
  //Print & Println 
@@ -20,6 +24,11 @@ void setup() {
   appHeight = height;
  //
  //Population
+ backgroundImageX = appWidth*0;
+ backgroundImageY = appHeight*0;
+ backgroundImageWidth = appWidth-1;
+ backgroundImageHeight = appHeight-1;
+ picBackground = loadImage("../imagesUsed/New folder/istockphoto-1372341709-1024x1024.jpg");
  xRectBackground = appWidth*0;
  yRectBackground = appHeight*0;
  widthRectBackground = appWidth-1;
@@ -28,30 +37,47 @@ void setup() {
  yRectQuit = appHeight*1/4;
  widthRectQuit = appWidth*1/2;
  heightRectQuit = appHeight*1/2;
+ xTitle = appWidth*1/4;
+ yTitle = appHeight*1/10;
+ widthTitle = appWidth*1/2;
+ heightTitle= appHeight*2/10;
+ xFooter = xTitle;
+ yFooter = appHeight*7/10;
+ widthFooter = widthTitle;
+ heightFooter = heightTitle;
  //
  //DIVs
- rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
- rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
- //rect(); //Image, foreground, near the top
- //rect(); //Copy and paste this for all rect()s
+ rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight); //Copy and paste this for all rect()s
  // 
- // Text Setup
+ //Text Setup
  // Fonts from OS (Operating System) 
  //String[] fontList = PFont.list(); //Lists all fonts available on OS
  //printArray(fontList);
- //[fontName] =  createFont("fontSpelling", [startingFont]);
- //Verify the font exist in Processing.Java  
+ titleFont = createFont("Harrington", 100);
+ footerFont = createFont("ArialMT", 100);
  //
 } //End setup 
 //
 void draw() {
+  //draw image 6o times per second
+  background(255);
   //Drawing Text, copied for each line of text
-  //fill [colourName]; //ink
+  fill(pink); //ink
   textAlign(CENTER, CENTER); //A;ign X&Y, see Processing.org / reference
-  //size = [pixelNumberFontsize]; //integer number
-  //textFont( [fontVariables] , size); // states which font to use
-  //text ( [textStringName], [four rect() variables copied from DIVs]);
+  size = 60; //integer number
+  textFont(titleFont, size); // states which font to use
+  text ( title, xTitle, yTitle, widthTitle, heightTitle );
+  fill(red);
+  textAlign(CENTER, TOP);
+  size = 120;
+  textFont(footerFont, size);
+  text( footer, xFooter, yFooter, widthFooter, heightFooter );
+  fill(resetDefaultInk);
   //
+ rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+ rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+ image(picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+ //
 } //End draw
 //
 void keyPressed() {
